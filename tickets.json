@@ -1,10 +1,8 @@
 [
-  { "id": 1, "text": "I was charged twice for my subscription this month. Please refund the extra charge." },
-  { "id": 2, "text": "The export button throws a 500 error every time I click it on the reports page." },
-  { "id": 3, "text": "It would be great if you could add a dark mode to the dashboard." },
-  { "id": 4, "text": "How do I reset my password? I can't find the link anywhere." },
-  { "id": 5, "text": "The app crashes on startup after the latest update on Android 14." },
-  { "id": 6, "text": "Can you send me a copy of my last invoice for our accounting team?" },
-  { "id": 7, "text": "Please add PDF export — CSV alone isn't enough for our reports." },
-  { "id": 8, "text": "Just wanted to say the new UI looks really clean. Nice work!" }
+  { "id": 1, "text": "The export button throws a 500 error every time I click it on the reports page." },
+  { "id": 2, "text": "I was charged twice for my subscription this month. Please refund the extra charge." },
+  { "id": 3, "text": "I keep getting charged even though my cancellation went through last week — did something break in your system?" },
+  { "id": 4, "text": "Incredible update — the dashboard now loads forever and I can't access any of my data. Really well tested." },
+  { "id": 5, "text": "i cannot download bill pdf, button click nothing, page refresh i try many time" },
+  { "id": 6, "text": "Why can't I export more than 500 rows at once? This is completely unusable for any serious reporting." }
 ]
