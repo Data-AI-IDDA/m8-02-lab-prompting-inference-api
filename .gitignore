@@ -6,6 +6,7 @@ __pycache__/
 venv/
 env/
 
+
 # Secrets — keep your key out of git
 .env
 
