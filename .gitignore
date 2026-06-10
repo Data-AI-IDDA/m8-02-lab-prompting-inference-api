@@ -8,6 +8,8 @@ env/
 
 # Secrets — keep your key out of git
 .env
+.env.example
+
 
 # OS
 .DS_Store
