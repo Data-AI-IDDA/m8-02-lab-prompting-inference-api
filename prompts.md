@@ -7,27 +7,54 @@ Record the exact prompts you used and your verdict here. This file is graded.
 ### Zero-shot prompt
 
 ```
-TODO: paste the exact zero-shot prompt you used
+Label this ticket as one of billing, bug, feature_request, other. Reply with the label only.
+Ticket: <text>
 ```
 
 ### Few-shot prompt
 
 ```
-TODO: paste the exact few-shot prompt (including the 2–3 examples)
+Ticket: charged twice
+Label: billing
+
+Ticket: app crashes
+Label: bug
+
+Ticket: add dark mode
+Label: feature_request
+
+Ticket: where is the guide
+Label: other
+
+Ticket: <text>
+Label:
 ```
 
 ### Chain-of-thought / decomposition prompt
 
 ```
-TODO: paste the exact CoT prompt you used
+Ticket: <text>
+
+Think briefly, then write 'Label: <one of billing, bug, feature_request, other>'
 ```
 
 ### Verdict (3–4 sentences)
 
-> TODO: Which pattern won? Where did each fail? Tie your answer to the
-> ticket categories (billing / bug / feature_request / other).
+> Few-shot was the most consistent across all four categories — the examples
+> anchored the model's output format and reduced label confusion on ambiguous
+> tickets like refund requests (billing vs other) and UI complaints
+> (bug vs feature_request). Zero-shot performed well on clear-cut cases but
+> occasionally mislabelled edge cases where the ticket straddled two categories.
+> CoT produced the most reasoning but that verbosity introduced noise: the model
+> sometimes hedged between two labels before committing, and on short tickets
+> the extra thinking added no accuracy benefit. For a production classifier,
+> few-shot at low temperature is the best default; CoT is worth keeping as a
+> fallback for low-confidence cases.
 
 ## Task 3 — Structured output notes
 
-> TODO: One or two sentences on how reliably each model (Gemini vs local
-> Ollama) produced valid JSON, and what you did when it didn't.
+> Gemini returned valid, schema-conforming JSON on every call because constrained
+> decoding enforces the schema at the token level, leaving no room for malformed
+> output. The local model followed the format most of the time but occasionally
+> wrapped the JSON in markdown fences or dropped a required key; a fence-stripping
+> regex and a `validate()` fallback with a safe default dict handled both cases.
